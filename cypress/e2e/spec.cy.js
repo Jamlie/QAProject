@@ -40,7 +40,7 @@ describe("Searching Feature", () => {
 
   it("Searching for a technology without writing its name correctly", () => {
     cy.get(".search-bar").type("ang{enter}");
-    cy.get(".company-name").should("not.contain", "Radix Technologies");
+    cy.get(".company-name").should("not.contain", "SoukTel");
   });
 
   it("Autocompletion for a city", () => {
