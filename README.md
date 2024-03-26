@@ -6,23 +6,23 @@ Search
 
 ## The number of test cases executed
 
-12
+21
 
 ## The number of test cases pass
 
-11
+15
 
 ## The number of test cases that fail
 
-1
+6
 
 ## Pass Percentage
 
-91%
+71%
 
 ## Fail Percentage
 
-9%
+29%
 
 ## Comments
 
