@@ -71,11 +71,11 @@ describe("Searching Feature", () => {
     cy.get(".last-search-and-results > .item").should("contain", "C++");
   });
 
-  it("Search for a Company with random letters", () => {
+  it("Search for a Company ", () => {
     cy.get(".search-bar").type("IQVIA{enter}");
   });
 
-  it("Search for a language with random spelling", () => {
+  it("Search for a not existed language ", () => {
     cy.get(".search-bar").type("paython{enter}");
     cy.get(".card-container").should("contain", "Oops, No Matches Found :(");
   });
@@ -85,7 +85,7 @@ describe("Searching Feature", () => {
     cy.get(".company-name").should("not.contain", "Reconess");
   });
 
-  it("search with long invalid input", () => {
+  it("search with long invalid input of numbers", () => {
     cy.get(".search-bar").type("2433467742{enter}");
     cy.get(".card-container").should("contain", "Oops, No Matches Found :(");
   });
@@ -109,7 +109,7 @@ describe("Searching Feature", () => {
     cy.get(".search-bar").type("KUBERNETES{enter}");
   });
 
-  it("search for a technology", () => {
+  it("search for a not existed technology", () => {
     cy.get(".search-bar").type("ruby{enter}");
   });
 });
