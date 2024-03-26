@@ -117,84 +117,82 @@ describe("Searching Feature", () => {
 describe("Filter Feature", () => {
   beforeEach(() => {
     cy.visit("https://stacksinfo.web.app/");
-    cy.get('.filter-button').click();
-    
+    cy.get(".filter-button").click();
   });
 
   it("User filtering based on backend", () => {
     cy.get('[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
-    cy.get('#C\\+\\+').click();
+    cy.get("#C\\+\\+").click();
   });
 
   it("User removing the backend filter", () => {
     cy.get('[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
-    cy.get('#C\\+\\+').click();
-    cy.get('#C\\+\\+').click();
+    cy.get("#C\\+\\+").click();
+    cy.get("#C\\+\\+").click();
   });
- 
+
   it("User filtering from two different categories", () => {
     cy.get('[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
-    cy.get('#C\\+\\+').click();
+    cy.get("#C\\+\\+").click();
     cy.get('[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
-    cy.get('#PostgreSQL').click();
+    cy.get("#PostgreSQL").click();
   });
 
   it("User removing the backend filter", () => {
     cy.get('[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
-    cy.get('#C\\+\\+').click();
+    cy.get("#C\\+\\+").click();
     cy.get('[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
-    cy.get('#PostgreSQL').click();
-    cy.get('#C\\+\\+').click();
+    cy.get("#PostgreSQL").click();
+    cy.get("#C\\+\\+").click();
 
-    cy.get(".title-not-fround").should("not.contain","Oops, No Matches Found :(");
-
+    cy.get(".title-not-fround").should(
+      "not.contain",
+      "Oops, No Matches Found :(",
+    );
   });
-
 
   it("User removing the DBA filter by pressing on Postgresql", () => {
     cy.get('[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
-    cy.get('#C\\+\\+').click();
+    cy.get("#C\\+\\+").click();
     cy.get('[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
-    cy.get('#PostgreSQL').click();
-    cy.get('#C\\+\\+').click();
-    cy.get('#PostgreSQL').click();
-    cy.get(".title-not-fround").should("not.contain","Oops, No Matches Found :(");
-
+    cy.get("#PostgreSQL").click();
+    cy.get("#C\\+\\+").click();
+    cy.get("#PostgreSQL").click();
+    cy.get(".title-not-fround").should(
+      "not.contain",
+      "Oops, No Matches Found :(",
+    );
   });
 
-  
   it("Removing the filters by resetting them", () => {
     cy.get('[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
-    cy.get('#C\\+\\+').click();
+    cy.get("#C\\+\\+").click();
     cy.get('[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
-    cy.get('#PostgreSQL').click();
-    cy.get('#PostgreSQL').click();
-    cy.get('.reset-btn').click();
+    cy.get("#PostgreSQL").click();
+    cy.get("#PostgreSQL").click();
+    cy.get(".reset-btn").click();
   });
 
   it("User Use more than one filter based on the backend in the same category", () => {
     cy.get('[data-testid="KeyboardArrowDownIcon"]').eq(0).click();
-    cy.get('#C\\+\\+').click();
-    cy.get('#Django').click();
+    cy.get("#C\\+\\+").click();
+    cy.get("#Django").click();
   });
 
   it("Single category selection", () => {
-    cy.get('.PrivateSwitchBase-input').eq(3).click();
+    cy.get(".PrivateSwitchBase-input").eq(3).click();
   });
 
   it("Multiple category selection", () => {
-    cy.get('.PrivateSwitchBase-input').eq(3).click();
-    cy.get('.PrivateSwitchBase-input').eq(4).click();
-
+    cy.get(".PrivateSwitchBase-input").eq(3).click();
+    cy.get(".PrivateSwitchBase-input").eq(4).click();
   });
 
   it("Multiple category selection and remove one", () => {
-    cy.get('.PrivateSwitchBase-input').eq(3).click();
-    cy.get('.PrivateSwitchBase-input').eq(4).click();
-    cy.get('.PrivateSwitchBase-input').eq(4).click();
-    
-    cy.get('.PrivateSwitchBase-input').eq(3).should('be.checked');
+    cy.get(".PrivateSwitchBase-input").eq(3).click();
+    cy.get(".PrivateSwitchBase-input").eq(4).click();
+    cy.get(".PrivateSwitchBase-input").eq(4).click();
 
+    cy.get(".PrivateSwitchBase-input").eq(3).should("be.checked");
   });
-
 });

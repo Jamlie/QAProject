@@ -27,3 +27,35 @@ Search
 ## Comments
 
 None
+
+---
+
+# Automatic Testing
+
+# Component
+
+Filter
+
+## The number of test cases executed
+
+10
+
+## The number of test cases pass
+
+7
+
+## The number of test cases that fail
+
+3
+
+## Pass Percentage
+
+70%
+
+## Fail Percentage
+
+30%
+
+## Comments
+
+None
