@@ -71,49 +71,45 @@ describe("Searching Feature", () => {
     cy.get(".last-search-and-results > .item").should("contain", "C++");
   });
 
-  it('Search for a Company', () => {
+  it("Search for a Company with random letters", () => {
     cy.get(".search-bar").type("IQVIA{enter}");
   });
 
-  it('Search for a language', () => {
+  it("Search for a language with random spelling", () => {
     cy.get(".search-bar").type("paython{enter}");
-    cy.get(".card-container").should("contain", "Oops, No Matches Found :(")
+    cy.get(".card-container").should("contain", "Oops, No Matches Found :(");
   });
 
-  it('search for a city', () => {
-    cy.get(".search-bar").type("Ramallah{enter}");
-  })
-
-  it('search for a technology ', () => {
+  it("search for a technology", () => {
     cy.get(".search-bar").type("AWS{enter}");
-    cy.get(".company-name").should("not.contain","Reconess")
-  })
+    cy.get(".company-name").should("not.contain", "Reconess");
+  });
 
-  it('search with long invalid input', () => {
+  it("search with long invalid input", () => {
     cy.get(".search-bar").type("2433467742{enter}");
-    cy.get(".card-container").should("contain", "Oops, No Matches Found :(")
-  })
+    cy.get(".card-container").should("contain", "Oops, No Matches Found :(");
+  });
 
-  it('search with one number', () => {
+  it("search with one number", () => {
     cy.get(".search-bar").type("2{enter}");
-    cy.get(".card-container").should("contain", "Oops, No Matches Found :(")
-  })
+    cy.get(".card-container").should("contain", "Oops, No Matches Found :(");
+  });
 
-  it('empty search', () => {
+  it("empty search", () => {
     cy.get(".search-bar").type("{enter}");
-    cy.get(".company-name").should("contain","Safarway")
-  })
+    cy.get(".company-name").should("contain", "Safarway");
+  });
 
-  it('search for a technology ', () => {
+  it("search for a technology", () => {
     cy.get(".search-bar").type("react{enter}");
-    cy.get(".company-name").should("not.contain","SoukTel")
-  })
+    cy.get(".company-name").should("not.contain", "SoukTel");
+  });
 
-  it('search for a company all capitilized ', () => {
+  it("search for a company all capitilized ", () => {
     cy.get(".search-bar").type("KUBERNETES{enter}");
-  })
+  });
 
-  it('search for a technology', () => {
+  it("search for a technology", () => {
     cy.get(".search-bar").type("ruby{enter}");
-  })
+  });
 });
